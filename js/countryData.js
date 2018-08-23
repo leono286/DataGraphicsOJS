@@ -1,0 +1,18 @@
+
+var downloadsByCountry = [
+  [
+    { label: 'Country', id: 'Country', type: 'string' },
+    { label: 'País', id: 'pais', type: 'string' },
+    { label: 'Descargas', id: 'Descargas', type: 'number' }
+  ],
+  ['CO', 'Colombia', 117985], ['MX', 'México', 49191], ['ES', 'España', 28069], ['RU', 'Rusia, (la) Federación de', 24603], ['AR', 'Argentina', 19967], ['PE', 'Perú', 17442], ['US', 'Estados Unidos de América (los)', 16214], ['CR', 'Costa Rica', 14527], ['BR', 'Brasil', 14198], ['VE', 'Venezuela (República Bolivariana de)', 12563], ['EC', 'Ecuador', 10906], ['CN', 'China', 10534], ['CZ', 'Chequia', 10290], ['CL', 'Chile', 7952], ['BO', 'Bolivia (Estado Plurinacional de)', 6922], ['SV', 'El Salvador', 3843], ['AT', 'Austria', 3472], ['DO', 'Dominicana, (la) República', 3164], ['UY', 'Uruguay', 3089], ['HN', 'Honduras', 3024], ['IN', 'India', 2616], ['CU', 'Cuba', 2561], ['GT', 'Guatemala', 2558], ['PA', 'Panamá', 2317], ['DE', 'Alemania', 2139], ['PY', 'Paraguay', 1963], ['NI', 'Nicaragua', 1200], ['FR', 'Francia', 1129], ['PR', 'Puerto Rico', 1108], ['GB', 'Reino Unido de Gran Bretaña e Irlanda del Norte (el)', 947], ['SE', 'Suecia', 640], ['PT', 'Portugal', 564], ['CA', 'Canadá', 447], ['TR', 'Turquía', 436], ['KR', 'Corea (la República de)', 378], ['PH', 'Filipinas (las)', 371], ['JP', 'Japón', 349], ['AO', 'Angola', 320], ['IT', 'Italia', 300], ['AU', 'Australia', 205], ['BE', 'Bélgica', 190], ['NL', 'Países Bajos (los)', 137], ['MD', 'Moldova (la República de)', 119], ['GR', 'Grecia', 112], ['PL', 'Polonia', 106], ['RO', 'Rumania', 98], ['LV', 'Letonia', 61], ['EE', 'Estonia', 55], ['UA', 'Ucrania', 52], ['IE', 'Irlanda', 51], ['ZA', 'Sudáfrica', 50], ['HU', 'Hungría', 47], ['LB', 'Líbano', 45], ['MA', 'Marruecos', 37], ['ID', 'Indonesia', 33], ['DZ', 'Argelia', 33], ['CH', 'Suiza', 30], ['VN', 'Viet Nam', 26], ['MZ', 'Mozambique', 26], ['HK', 'Hong Kong', 24], ['FI', 'Finlandia', 21], ['BG', 'Bulgaria', 19], ['NO', 'Noruega', 17], ['SA', 'Arabia Saudita', 14], ['SI', 'Eslovenia', 14], ['SC', 'Seychelles', 10], ['MY', 'Malasia', 9], ['CI', 'Côte d\'Ivoire', 9], ['KW', 'Kuwait', 9], ['NG', 'Nigeria', 8], ['CY', 'Chipre', 8], ['SG', 'Singapur', 8], ['TW', 'Taiwán (Provincia de China)', 7], ['SD', 'Sudán (el)', 7], ['BD', 'Bangladesh', 6], ['BY', 'Belarús', 6], ['IL', 'Israel', 6], ['IR', 'Irán (República Islámica de)', 6], ['LT', 'Lituania', 5], ['CM', 'Camerún', 5], ['EG', 'Egipto', 5], ['HR', 'Croacia', 5], ['MT', 'Malta', 5], ['SK', 'Eslovaquia', 5], ['NZ', 'Nueva Zelandia', 4], ['AE', 'Emiratos Árabes Unidos (los)', 4], ['NN', 'No identificado', 20], ['BA', 'Bosnia y Herzegovina', 4], ['DK', 'Dinamarca', 4], ['HT', 'Haití', 4], ['IS', 'Islandia', 4], ['KY', 'Caimán, (las) Islas', 4], ['MK', 'Macedonia (la ex República Yugoslava de)', 4], ['GE', 'Georgia', 2], ['KH', 'Camboya', 2], ['TN', 'Túnez', 2], ['BJ', 'Benin', 2], ['CV', 'Cabo Verde', 1], ['GH', 'Ghana', 1], ['GQ', 'Guinea Ecuatorial', 1], ['IQ', 'Iraq', 1], ['KE', 'Kenya', 1], ['LK', 'Sri Lanka', 1], ['QA', 'Qatar', 1]
+];
+
+var totalsByCountry = [
+  ['Country', 'Descargas'],
+   ['CO',117985], ['MX',49191], ['ES',28069], ['RU',24603], ['AR',19967], ['PE',17442], ['US',16214], ['CR',14527], ['BR',14198], ['VE',12563], ['EC',10906], ['CN',10534], ['CZ',10290], ['CL',7952], ['BO',6922]
+];
+
+var topTenDownloadsByCountry = [
+  ['País', 'Descargas'], ['Colombia',117985], ['México',49191], ['España',28069], ['Rusia, (la) Federación de',24603], ['Argentina',19967], ['Perú',17442], ['Estados Unidos de América (los)',16214], ['Costa Rica',14527], ['Brasil',14198], ['Venezuela (República Bolivariana de)',12563], ['Otros paises (96)',87357]
+]

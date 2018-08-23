@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Estadísticas RIB</title>
+
+
+  <!-- <link rel="stylesheet" href="css/main.css"> -->
+  <link rel="stylesheet" href="main.css">
+
+  <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+  <!-- <script type="text/javascript" src="js/countryData.js"></script> -->
+  <!-- <script type="text/javascript" src="js/load-map.js"></script> -->
+
+  <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+
+  <!-- Compiled and minified CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/css/materialize.min.css" media="screen,projection">
+
+  <!--Import Google Icon Font-->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+  <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+
+  <!--Let browser know website is optimized for mobile-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <script>
+
+
+    var downloadsByCountry = [
+      [
+        { label: 'Country', id: 'Country', type: 'string' },
+        { label: 'País', id: 'pais', type: 'string' },
+        { label: 'Descargas', id: 'Descargas', type: 'number' }
+      ],
+      ['CO', 'Colombia', 117985], ['MX', 'México', 49191], ['ES', 'España', 28069], ['RU', 'Rusia, (la) Federación de', 24603], ['AR', 'Argentina', 19967], ['PE', 'Perú', 17442], ['US', 'Estados Unidos de América (los)', 16214], ['CR', 'Costa Rica', 14527], ['BR', 'Brasil', 14198], ['VE', 'Venezuela (República Bolivariana de)', 12563], ['EC', 'Ecuador', 10906], ['CN', 'China', 10534], ['CZ', 'Chequia', 10290], ['CL', 'Chile', 7952], ['BO', 'Bolivia (Estado Plurinacional de)', 6922], ['SV', 'El Salvador', 3843], ['AT', 'Austria', 3472], ['DO', 'Dominicana, (la) República', 3164], ['UY', 'Uruguay', 3089], ['HN', 'Honduras', 3024], ['IN', 'India', 2616], ['CU', 'Cuba', 2561], ['GT', 'Guatemala', 2558], ['PA', 'Panamá', 2317], ['DE', 'Alemania', 2139], ['PY', 'Paraguay', 1963], ['NI', 'Nicaragua', 1200], ['FR', 'Francia', 1129], ['PR', 'Puerto Rico', 1108], ['GB', 'Reino Unido de Gran Bretaña e Irlanda del Norte (el)', 947], ['SE', 'Suecia', 640], ['PT', 'Portugal', 564], ['CA', 'Canadá', 447], ['TR', 'Turquía', 436], ['KR', 'Corea (la República de)', 378], ['PH', 'Filipinas (las)', 371], ['JP', 'Japón', 349], ['AO', 'Angola', 320], ['IT', 'Italia', 300], ['AU', 'Australia', 205], ['BE', 'Bélgica', 190], ['NL', 'Países Bajos (los)', 137], ['MD', 'Moldova (la República de)', 119], ['GR', 'Grecia', 112], ['PL', 'Polonia', 106], ['RO', 'Rumania', 98], ['LV', 'Letonia', 61], ['EE', 'Estonia', 55], ['UA', 'Ucrania', 52], ['IE', 'Irlanda', 51], ['ZA', 'Sudáfrica', 50], ['HU', 'Hungría', 47], ['LB', 'Líbano', 45], ['MA', 'Marruecos', 37], ['ID', 'Indonesia', 33], ['DZ', 'Argelia', 33], ['CH', 'Suiza', 30], ['VN', 'Viet Nam', 26], ['MZ', 'Mozambique', 26], ['HK', 'Hong Kong', 24], ['FI', 'Finlandia', 21], ['BG', 'Bulgaria', 19], ['NO', 'Noruega', 17], ['SA', 'Arabia Saudita', 14], ['SI', 'Eslovenia', 14], ['SC', 'Seychelles', 10], ['MY', 'Malasia', 9], ['CI', 'Côte d\'Ivoire', 9], ['KW', 'Kuwait', 9], ['NG', 'Nigeria', 8], ['CY', 'Chipre', 8], ['SG', 'Singapur', 8], ['TW', 'Taiwán (Provincia de China)', 7], ['SD', 'Sudán (el)', 7], ['BD', 'Bangladesh', 6], ['BY', 'Belarús', 6], ['IL', 'Israel', 6], ['IR', 'Irán (República Islámica de)', 6], ['LT', 'Lituania', 5], ['CM', 'Camerún', 5], ['EG', 'Egipto', 5], ['HR', 'Croacia', 5], ['MT', 'Malta', 5], ['SK', 'Eslovaquia', 5], ['NZ', 'Nueva Zelandia', 4], ['AE', 'Emiratos Árabes Unidos (los)', 4], ['NN', 'No identificado', 20], ['BA', 'Bosnia y Herzegovina', 4], ['DK', 'Dinamarca', 4], ['HT', 'Haití', 4], ['IS', 'Islandia', 4], ['KY', 'Caimán, (las) Islas', 4], ['MK', 'Macedonia (la ex República Yugoslava de)', 4], ['GE', 'Georgia', 2], ['KH', 'Camboya', 2], ['TN', 'Túnez', 2], ['BJ', 'Benin', 2], ['CV', 'Cabo Verde', 1], ['GH', 'Ghana', 1], ['GQ', 'Guinea Ecuatorial', 1], ['IQ', 'Iraq', 1], ['KE', 'Kenya', 1], ['LK', 'Sri Lanka', 1], ['QA', 'Qatar', 1]
+    ];
+
+    var totalsByCountry = [
+      ['Country', 'Descargas'],
+      ['CO', 117985], ['MX', 49191], ['ES', 28069], ['RU', 24603], ['AR', 19967], ['PE', 17442], ['US', 16214], ['CR', 14527], ['BR', 14198], ['VE', 12563], ['EC', 10906], ['CN', 10534], ['CZ', 10290], ['CL', 7952], ['BO', 6922]
+    ];
+
+    var topTenDownloadsByCountry = [
+      ['País', 'Descargas'], ['Colombia', 117985], ['México', 49191], ['España', 28069], ['Rusia, (la) Federación de', 24603], ['Argentina', 19967], ['Perú', 17442], ['Estados Unidos de América (los)', 16214], ['Costa Rica', 14527], ['Brasil', 14198], ['Venezuela (República Bolivariana de)', 12563], ['Otros paises (96)', 87357]
+    ]
+
+
+    google.charts.load('current', {
+      'packages': ['geochart', 'corechart'],
+      'mapsApiKey': 'AIzaSyAWyLSsjUXSHnhiskGupMURCA9SrxM-m-I'
+    });
+
+
+
+    // function drawChart() {
+    //   var data = google.visualization.arrayToDataTable(totalsByCountry);
+
+    //   var options = {
+    //     curveType: 'function',
+    //     legend
+    //   };
+
+    //   var chart = new google.visualization.LineChart(document.getElementById('curve_chart'));
+
+    //   chart.draw(data, options);
+    // }
+
+
+    google.charts.setOnLoadCallback(drawRegionsMap);
+
+    function drawRegionsMap() {
+      var downloadsData = google.visualization.arrayToDataTable(downloadsByCountry);
+      // var visitsData = google.visualization.arrayToDataTable(visitsByCountry);
+
+      var options = {
+        colorAxis: { colors: ['#7AA1D2', '#DBD4B4', '#CC95C0'] },
+        // backgroundColor: '#edf9ff',
+        // datalessRegionColor: '#f8bbd0',
+        defaultColor: '#f5f5f5',
+      };
+
+      var downloadsChart = new google.visualization.GeoChart(document.getElementById('downloads'));
+      // var visitsChart = new google.visualization.GeoChart(document.getElementById('visits'));
+
+      downloadsChart.draw(downloadsData, options);
+      // visitsChart.draw(visitsData, options);
+
+      // drawChart();
+      drawDonutPies();
+    }
+
+    function drawDonutPies() {
+      var options = {
+        pieHole: 0.4,
+        slices: {
+          0: { color: '#7AA1D2' },
+          1: { color: '#B0BDC1' },
+          2: { color: '#D5B9BA' },
+          3: { color: '#87A8CE' },
+          4: { color: '#DAD3B4' },
+          5: { color: '#CC96C0' },
+          6: { color: '#9BB2C7' },
+          7: { color: '#D8C7B6' },
+          8: { color: '#CACBB9' },
+          9: { color: '#D0A5BD' },
+          10: { color: '#D5B9BA' }
+        }
+      };
+
+      // var visitsData = google.visualization.arrayToDataTable(topTenVisitsByCountry);
+      var downloadsData = google.visualization.arrayToDataTable(topTenDownloadsByCountry);
+
+      // var visitsChart = new google.visualization.PieChart(document.getElementById('visitsDonutChart'));
+      var downloadsChart = new google.visualization.PieChart(document.getElementById('downloadsDonutChart'));
+      // visitsChart.draw(visitsData, options);
+      downloadsChart.draw(downloadsData, options);
+
+    }
+  </script>
+
+
+</head>
+
+<body>
+
+  <nav class="custom-nav">
+    <div class="nav-wrapper container">
+      <div class="title">Análisis de descargas de la Revista Interamericana de Bibliotecología de Ene-2017 a Jul-2018</div>
+    </div>
+  </nav>
+
+
+  <div class="container custom-dashboard">
+
+    <div class="row">
+      <div class="col s12">
+        <div class="card plain-text">
+          <div class="card-content">
+            <h4>Introducción</h4>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis asperiores officiis cupiditate, perferendis
+              quis quae velit iste ab facere corrupti, distinctio animi id. Fugiat officia hic, ipsum exercitationem reprehenderit
+              eligendi.
+            </p>
+            <p>
+              Libero quaerat sint, quo omnis aliquam labore recusandae assumenda sed officia molestias ipsum in totam rem esse hic dolore
+              praesentium, dolores dolorum a quia obcaecati. Quibusdam eligendi molestias quod est. Natus, veritatis corrupti
+              nisi vero magni accusamus vitae magnam mollitia! Nulla voluptatibus debitis cumque quaerat atque amet numquam
+              tenetur harum voluptates ex omnis dolorem, ducimus laborum! Facilis, quaerat! Fugiat, nostrum?</p>
+            <p>Reprehenderit ut dolores eveniet voluptatem qui vitae veniam laudantium iste laborum saepe in eos sunt, officia,
+              explicabo natus dolore beatae nam repudiandae architecto! Aperiam corrupti nihil doloribus quis vero neque?</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col s12">
+        <div class="card">
+          <span class="card-title">Descargas por país</span>
+          <div class="card-content">
+            <p class="note">*Mueve el mouse sobre cada país para ampliar la información.</p>
+            <div id="downloads" class="map-donut-conatiner" style="width: 100%; height: auto;"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col s12">
+        <div class="card" style="background-color: #F5F5F5; color: #333;">
+          <div class="card-content">
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ut ipsum delectus esse vitae ad corporis optio accusamus
+              illum quae id? Mollitia dolorum reiciendis corrupti sint delectus similique nisi quae beatae.Recusandae iure,
+              officia incidunt fugiat exercitationem pariatur, dolorem minus eveniet, fugit quisquam dolores rerum non dicta
+              repellat harum ex facere reprehenderit. Impedit molestias saepe tempore cum ipsa amet nobis provident!</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col s12 m4">
+        <div class="card total-value custom-blue">
+          <div class="card-content">
+            <span class="title">Total descargas</span>
+            <i class="medium material-icons">file_download</i>
+            <span class="value">421.241</span>
+          </div>
+        </div>
+      </div>
+      <div class="col s12 m4">
+        <div class="card total-value custom-orange">
+          <div class="card-content">
+            <span class="title"> Descargas | País</span>
+            <i class="medium material-icons">file_download <span class="pipe">|</span> flag</i>
+            <span class="value">402.116</span>
+          </div>
+        </div>
+      </div>
+      <div class="col s12 m4">
+        <div class="card total-value custom-dark-blue">
+          <div class="card-content">
+            <span class="title">Descargas | Ciudad</span>
+            <i class="medium material-icons">file_download <span class="pipe">|</span> location_on</i>
+            <span class="value">323.808</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col s12 m4 offset-m2">
+        <div class="card total-value custom-green">
+          <div class="card-content">
+            <span class="title">Países identificados</span>
+            <i class="medium material-icons">flag</i>
+            <span class="value">103</span>
+          </div>
+        </div>
+      </div>
+      <div class="col s12 m4">
+        <div class="card total-value custom-purple">
+          <div class="card-content">
+            <span class="title">Ciudades identificadas</span>
+            <i class="medium material-icons">location_on</i>
+            <span class="value">2.670</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col s12 xl6">
+        <div class="card">
+          <span class="card-title">Top 10 descargas por país</span>
+          <div class="card-content">
+            <div id="downloadsDonutChart" class="map-donut-conatiner" style="width: auto; height: 360px;"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col s12 xl6">
+        <div class="card" style="background-color: #F5F5F5; color: #333;">
+          <div class="card-content">
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ut ipsum delectus esse vitae ad corporis optio accusamus
+              illum quae id? Mollitia dolorum reiciendis corrupti sint delectus similique nisi quae beatae.Recusandae iure,
+              officia incidunt fugiat exercitationem pariatur, dolorem minus eveniet, fugit quisquam dolores rerum non dicta
+              repellat harum ex facere reprehenderit. Impedit molestias saepe tempore cum ipsa amet nobis provident!</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <!-- <div class="row">
+      <div class="col s12">
+        <div class="card">
+          <span class="card-title">Total por país</span>
+          <div class="card-content">
+            <div id="curve_chart" style="width: 100%; height: auto;"></div>
+          </div>
+        </div>
+      </div>
+    </div> -->
+
+  </div>
+
+
+
+
+
+
+  <!-- Compiled and minified JavaScript -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/js/materialize.min.js"></script>
+</body>
+
+</html>

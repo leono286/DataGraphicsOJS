@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Estadísticas RIB</title>
+
+
+  <link rel="stylesheet" href="css/main.css">
+
+  <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+  <script type="text/javascript" src="js/countryData.js"></script>
+  <script type="text/javascript" src="js/load-map.js"></script>
+
+  <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+
+  <!-- Compiled and minified CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/css/materialize.min.css" media="screen,projection">
+
+  <!--Import Google Icon Font-->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+  <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+
+  <!--Let browser know website is optimized for mobile-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+</head>
+
+<body>
+
+  <nav class="custom-nav">
+    <div class="nav-wrapper container">
+      <div class="title">Análisis de descargas de la Revista Interamericana de Bibliotecología de Ene-2017 a Jul-2018</div>
+    </div>
+  </nav>
+
+
+  <div class="container custom-dashboard">
+
+    <div class="row">
+        <div class="col s12">
+            <div class="card plain-text">
+              <div class="card-content">
+                <h4>Introducción</h4>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis asperiores officiis cupiditate, perferendis quis quae velit iste ab facere corrupti, distinctio animi id. Fugiat officia hic, ipsum exercitationem reprehenderit eligendi.</p>
+                <p>
+                Libero quaerat sint, quo omnis aliquam labore recusandae assumenda sed officia molestias ipsum in totam rem esse hic dolore praesentium, dolores dolorum a quia obcaecati. Quibusdam eligendi molestias quod est.
+                Natus, veritatis corrupti nisi vero magni accusamus vitae magnam mollitia! Nulla voluptatibus debitis cumque quaerat atque amet numquam tenetur harum voluptates ex omnis dolorem, ducimus laborum! Facilis, quaerat! Fugiat, nostrum?</p>
+                <p>Reprehenderit ut dolores eveniet voluptatem qui vitae veniam laudantium iste laborum saepe in eos sunt, officia, explicabo natus dolore beatae nam repudiandae architecto! Aperiam corrupti nihil doloribus quis vero neque?</p>
+              </div>
+            </div>
+          </div>
+    </div>
+
+    <div class="row">
+      <div class="col s12">
+        <div class="card">
+          <span class="card-title">Descargas por país</span>
+          <div class="card-content">
+            <p class="note">*Mueve el mouse sobre cada país para ampliar la información.</p>
+            <div id="downloads" class="map-donut-conatiner" style="width: 100%; height: auto;"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col s12">
+        <div class="card" style="background-color: #F5F5F5; color: #333;">
+          <div class="card-content">
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ut ipsum delectus esse vitae ad corporis optio accusamus illum quae id? Mollitia dolorum reiciendis corrupti sint delectus similique nisi quae beatae.Recusandae iure, officia incidunt fugiat exercitationem pariatur, dolorem minus eveniet, fugit quisquam dolores rerum non dicta repellat harum ex facere reprehenderit. Impedit molestias saepe tempore cum ipsa amet nobis provident!</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col s12 m4">
+        <div class="card total-value custom-blue">
+          <div class="card-content">
+            <span class="title">Total descargas</span>
+            <i class="medium material-icons">file_download</i>
+            <span class="value">421.241</span>
+          </div>
+        </div>
+      </div>
+      <div class="col s12 m4">
+        <div class="card total-value custom-orange">
+          <div class="card-content">
+            <span class="title"> Descargas | País</span>
+            <i class="medium material-icons">file_download <span class="pipe">|</span> flag</i>
+            <span class="value">402.116</span>
+          </div>
+        </div>
+      </div>
+      <div class="col s12 m4">
+        <div class="card total-value custom-dark-blue">
+          <div class="card-content">
+            <span class="title">Descargas | Ciudad</span>
+            <i class="medium material-icons">file_download <span class="pipe">|</span> location_on</i>
+            <span class="value">323.808</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col s12 m4 offset-m2">
+        <div class="card total-value custom-green">
+          <div class="card-content">
+            <span class="title">Países identificados</span>
+            <i class="medium material-icons">flag</i>
+            <span class="value">103</span>
+          </div>
+        </div>
+      </div>
+      <div class="col s12 m4">
+        <div class="card total-value custom-purple">
+          <div class="card-content">
+            <span class="title">Ciudades identificadas</span>
+            <i class="medium material-icons">location_on</i>
+            <span class="value">2.670</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col s12 xl6">
+        <div class="card">
+          <span class="card-title">Top 10 descargas por país</span>
+          <div class="card-content">
+            <div id="downloadsDonutChart" class="map-donut-conatiner" style="width: auto; height: 360px;"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col s12 xl6">
+          <div class="card" style="background-color: #F5F5F5; color: #333;">
+            <div class="card-content">
+              <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ut ipsum delectus esse vitae ad corporis optio accusamus illum quae id? Mollitia dolorum reiciendis corrupti sint delectus similique nisi quae beatae.Recusandae iure, officia incidunt fugiat exercitationem pariatur, dolorem minus eveniet, fugit quisquam dolores rerum non dicta repellat harum ex facere reprehenderit. Impedit molestias saepe tempore cum ipsa amet nobis provident!</p>
+            </div>
+          </div>
+        </div>
+    </div>
+
+
+    <!-- <div class="row">
+      <div class="col s12">
+        <div class="card">
+          <span class="card-title">Total por país</span>
+          <div class="card-content">
+            <div id="curve_chart" style="width: 100%; height: auto;"></div>
+          </div>
+        </div>
+      </div>
+    </div> -->
+
+  </div>
+
+
+
+
+
+
+  <!-- Compiled and minified JavaScript -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/js/materialize.min.js"></script>
+</body>
+
+</html>

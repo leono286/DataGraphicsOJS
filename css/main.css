@@ -1,0 +1,91 @@
+body {
+  background-color: #E9EEF2;
+  font-family: 'Roboto', sans-serif;
+}
+
+nav.custom-nav{
+  height: auto;
+  margin-bottom: 60px;
+  background-color: #cd6b35;
+}
+nav.custom-nav .title{
+  font-size: 32px;
+  padding: 25px 0;
+  text-align: center;
+  line-height: 45px;
+}
+
+.card.plain-text {
+  background-color: #F5F5F5;
+  color: #333;
+}
+
+.card.plain-text .card-content p {
+  margin: 1em 0;
+}
+
+.custom-dashboard .card-title {
+  background-color: #323A45;
+  color: #FFFFFF;
+  text-align: center;
+  display: block;
+  padding: 8px 5px;
+  text-align: center;
+  font-size: 20px;
+}
+
+.map-donut-conatiner {
+  margin: 0 auto;
+}
+
+.card.total-value {
+  color: #FFFFFF;
+  height: 260px;
+  border-radius: 2px;
+}
+
+.card.total-value .card-content {
+  display: flex;
+  flex-direction: column;
+  justify-content:  space-between;
+  align-items: center;
+  height: 100%;
+}
+
+.card.total-value .card-content .title {
+  font-size: 26px;
+  text-align: center;
+}
+
+.card.total-value .card-content .material-icons .pipe {
+  font-size: 38px;
+  vertical-align: super;
+}
+
+.card.total-value .card-content .value {
+  font-size: 32px;
+}
+
+.card.total-value .card-title {
+  background-color: transparent;
+}
+
+.card.custom-blue {
+  background-color: #0EB6D1;
+}
+
+.card.custom-orange {
+  background-color: #F27835;
+}
+
+.card.custom-green {
+  background-color: #1FBBA6;
+}
+
+.card.custom-dark-blue {
+  background-color: #1f2041;
+}
+
+.card.custom-purple {
+  background-color: #52489c;
+}
