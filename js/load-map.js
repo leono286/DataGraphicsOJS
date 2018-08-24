@@ -7,18 +7,17 @@ google.charts.load('current', {
 
 
 
-// function drawChart() {
-//   var data = google.visualization.arrayToDataTable(totalsByCountry);
+function drawChart() {
+  var data = google.visualization.arrayToDataTable(downloadsByMonth);
 
-//   var options = {
-//     curveType: 'function',
-//     legend
-//   };
+  var options = {
+    legend: 'none',
+  };
 
-//   var chart = new google.visualization.LineChart(document.getElementById('curve_chart'));
+  var chart = new google.visualization.LineChart(document.getElementById('curve_chart'));
 
-//   chart.draw(data, options);
-// }
+  chart.draw(data, options);
+}
 
 
 google.charts.setOnLoadCallback(drawRegionsMap);
@@ -40,7 +39,7 @@ function drawRegionsMap() {
   downloadsChart.draw(downloadsData, options);
   // visitsChart.draw(visitsData, options);
 
-  // drawChart();
+  drawChart();
   drawDonutPies();
 }
 
@@ -62,12 +61,13 @@ function drawDonutPies(){
     }
   };
 
-  // var visitsData = google.visualization.arrayToDataTable(topTenVisitsByCountry);
-  var downloadsData = google.visualization.arrayToDataTable(topTenDownloadsByCountry);
+  var downloadsCountryData = google.visualization.arrayToDataTable(topTenDownloadsByCountry);
+  var downloadsCityData = google.visualization.arrayToDataTable(topTenDownloadsByCity);
 
-  // var visitsChart = new google.visualization.PieChart(document.getElementById('visitsDonutChart'));
-  var downloadsChart = new google.visualization.PieChart(document.getElementById('downloadsDonutChart'));
-  // visitsChart.draw(visitsData, options);
-  downloadsChart.draw(downloadsData, options);
+  var downloadsCountryPie = new google.visualization.PieChart(document.getElementById('downloadsCountryDonutChart'));
+  var downloadsCityPie = new google.visualization.PieChart(document.getElementById('downloadsCityDonutChart'));
+
+  downloadsCountryPie.draw(downloadsCountryData, options);
+  downloadsCityPie.draw(downloadsCityData, options);
 
 }
