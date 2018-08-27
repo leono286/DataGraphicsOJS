@@ -4,8 +4,19 @@ google.charts.load('current', {
 });
 google.charts.setOnLoadCallback(initCharts);
 
-function initCharts(){
+$(document).ready(function(){
   M.AutoInit();
+  var currentWindowWidth = $('body')[0].offsetWidth;
+  $(window).resize(function() {
+    if($('body')[0].offsetWidth != currentWindowWidth){
+      initCharts();
+    }
+  });
+})
+ 
+
+
+function initCharts(){
   drawRegionsMap();
   drawLineChart();
   drawDonutPies();
