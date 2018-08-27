@@ -1,46 +1,35 @@
-
-
 google.charts.load('current', {
-  'packages':['geochart','corechart'],
+  'packages':['geochart','corechart', 'table'],
   'mapsApiKey': 'AIzaSyAWyLSsjUXSHnhiskGupMURCA9SrxM-m-I'
 });
+google.charts.setOnLoadCallback(initCharts);
 
+function initCharts(){
+  M.AutoInit();
+  drawRegionsMap();
+  drawLineChart();
+  drawDonutPies();
+  drawTables();
+}
 
-
-function drawChart() {
+function drawLineChart() {
   var data = google.visualization.arrayToDataTable(downloadsByMonth);
-
   var options = {
     legend: 'none',
   };
-
   var chart = new google.visualization.LineChart(document.getElementById('curve_chart'));
-
   chart.draw(data, options);
 }
 
 
-google.charts.setOnLoadCallback(drawRegionsMap);
-
 function drawRegionsMap() {
   var downloadsData = google.visualization.arrayToDataTable(downloadsByCountry);
-  // var visitsData = google.visualization.arrayToDataTable(visitsByCountry);
-
   var options = {
     colorAxis: {colors: ['#7AA1D2', '#DBD4B4', '#CC95C0']},
-    // backgroundColor: '#edf9ff',
-    // datalessRegionColor: '#f8bbd0',
     defaultColor: '#f5f5f5',
   };
-
   var downloadsChart = new google.visualization.GeoChart(document.getElementById('downloads'));
-  // var visitsChart = new google.visualization.GeoChart(document.getElementById('visits'));
-
   downloadsChart.draw(downloadsData, options);
-  // visitsChart.draw(visitsData, options);
-
-  drawChart();
-  drawDonutPies();
 }
 
 function drawDonutPies(){
@@ -60,14 +49,21 @@ function drawDonutPies(){
       10: { color: '#D5B9BA' }
     }
   };
-
   var downloadsCountryData = google.visualization.arrayToDataTable(topTenDownloadsByCountry);
   var downloadsCityData = google.visualization.arrayToDataTable(topTenDownloadsByCity);
-
   var downloadsCountryPie = new google.visualization.PieChart(document.getElementById('downloadsCountryDonutChart'));
   var downloadsCityPie = new google.visualization.PieChart(document.getElementById('downloadsCityDonutChart'));
-
   downloadsCountryPie.draw(downloadsCountryData, options);
   downloadsCityPie.draw(downloadsCityData, options);
+}
 
+function drawTables(){
+  var downloadsByCountryData = google.visualization.arrayToDataTable(downloadsByCountryDataTable);
+  var downloadsByCityData = google.visualization.arrayToDataTable(downloadsByCityDataTable);
+
+  var tableCountry = new google.visualization.Table(document.getElementById('downloads-by-country-table'));
+  var tableCity = new google.visualization.Table(document.getElementById('downloads-by-city-table'));
+
+  tableCountry.draw(downloadsByCountryData, {showRowNumber: false, allowHtml: true, width: '100%', height: '100%'});
+  tableCity.draw(downloadsByCityData, {showRowNumber: false, allowHtml: false, width: '100%', height: '100%'});
 }

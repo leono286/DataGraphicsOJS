@@ -47,7 +47,8 @@
             <h4>Introducción</h4>
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis asperiores officiis cupiditate, perferendis
               quis quae velit iste ab facere corrupti, distinctio animi id. Fugiat officia hic, ipsum exercitationem reprehenderit
-              eligendi.</p>
+              eligendi.
+            </p>
             <p>
               Libero quaerat sint, quo omnis aliquam labore recusandae assumenda sed officia molestias ipsum in totam rem esse hic dolore
               praesentium, dolores dolorum a quia obcaecati. Quibusdam eligendi molestias quod est. Natus, veritatis corrupti
@@ -91,7 +92,7 @@
           <div class="card-content">
             <span class="title">Total descargas</span>
             <i class="medium material-icons">file_download</i>
-            <span class="value">421.241</span>
+            <span class="value">29.266</span>
           </div>
         </div>
       </div>
@@ -100,7 +101,7 @@
           <div class="card-content">
             <span class="title"> Descargas | País</span>
             <i class="medium material-icons">file_download <span class="pipe">|</span> flag</i>
-            <span class="value">402.116</span>
+            <span class="value">26.042</span>
           </div>
         </div>
       </div>
@@ -109,7 +110,7 @@
           <div class="card-content">
             <span class="title">Descargas | Ciudad</span>
             <i class="medium material-icons">file_download <span class="pipe">|</span> location_on</i>
-            <span class="value">323.808</span>
+            <span class="value">22.244</span>
           </div>
         </div>
       </div>
@@ -121,7 +122,7 @@
           <div class="card-content">
             <span class="title">Países identificados</span>
             <i class="medium material-icons">flag</i>
-            <span class="value">103</span>
+            <span class="value">69</span>
           </div>
         </div>
       </div>
@@ -130,7 +131,7 @@
           <div class="card-content">
             <span class="title">Ciudades identificadas</span>
             <i class="medium material-icons">location_on</i>
-            <span class="value">2.670</span>
+            <span class="value">646</span>
           </div>
         </div>
       </div>
@@ -160,9 +161,136 @@
     <div class="row">
       <div class="col s12">
         <div class="card">
-          <span class="card-title">Total por país</span>
+          <span class="card-title">Descargas por mes de Ene-2017 a Jul-2018</span>
           <div class="card-content">
             <div id="curve_chart" style="width: 100%; height: auto;"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row modal-triggers-container">
+      <div class="col s12 m4">
+        <!-- Modal Trigger -->
+        <a class="waves-effect waves-light btn modal-trigger custom-blue" href="#modalTop10Articulos">Top 10 artículos más descargados</a>
+
+        <!-- Modal Structure -->
+        <div id="modalTop10Articulos" class="modal bottom-sheet">
+          <div class="container">
+            <div class="modal-content">
+              <div class="right-align">
+                <a href="#!" class="modal-close waves-effect waves-green btn-flat right-align">Cerrar</a>
+              </div>
+              <h4>Top 10 artículos más descargados</h4>
+              <ul class="collection top-ten-articles">
+                <li class="collection-item">
+                  <span class="material-icons no-icon circle">#1</span>
+                  <span class="title">La reinterpretación de visibilidad y calidad en las nuevas políticas de evaluación
+                    de revistas científicas</span>
+                  <span class="downloads-total-value">2.933<i class="small material-icons">file_download</i></span>
+                </li>
+                <li class="collection-item">
+                  <span class="material-icons no-icon circle">#2</span>
+                  <span class="title">La archivística como profesión: caracterización del proceso de formación de la Escuela
+                    Interamericana de Bibliotecología</span>
+                  <span class="downloads-total-value">2.291<i class="small material-icons">file_download</i></span>
+                </li>
+                <li class="collection-item">
+                  <span class="material-icons no-icon circle">#3</span>
+                  <span class="title">Visibilidad de los investigadores colombianos según sus indicadores en Google Scholar
+                    y ResearchGate. Diferencias y similitudes con la clasificación oficial del sistema nacional de ciencia
+                    - COLCIENCIAS</span>
+                  <span class="downloads-total-value">2.268<i class="small material-icons">file_download</i></span>
+                </li>
+                <li class="collection-item">
+                  <span class="material-icons no-icon circle">#4</span>
+                  <span class="title">Nuevos espacios y retos para los actuales profesionales de la información</span>
+                  <span class="downloads-total-value">2.260<i class="small material-icons">file_download</i></span>
+                </li>
+                <li class="collection-item">
+                  <span class="material-icons no-icon circle">#5</span>
+                  <span class="title">Archivos, derechos humanos y memoria.Una revisión de la literatura académica internacional</span>
+                  <span class="downloads-total-value">2.119<i class="small material-icons">file_download</i></span>
+                </li>
+                <li class="collection-item">
+                  <span class="material-icons no-icon circle">#6</span>
+                  <span class="title">Competencias en información y en comunicación: desarrollo conceptual a partir de la
+                    new media literacy</span>
+                  <span class="downloads-total-value">1.985<i class="small material-icons">file_download</i></span>
+                </li>
+                <li class="collection-item">
+                  <span class="material-icons no-icon circle">#7</span>
+                  <span class="title">Memoria fotográfica: la imagen como recuerdo y documento histórico</span>
+                  <span class="downloads-total-value">1.875<i class="small material-icons">file_download</i></span>
+                </li>
+                <li class="collection-item">
+                  <span class="material-icons no-icon circle">#8</span>
+                  <span class="title">Iniciativas y proyectos para fortalecer la biblioteca escolar en Colombia: una revisión
+                    histórica. Del siglo XIX al siglo XXI</span>
+                  <span class="downloads-total-value">1.666<i class="small material-icons">file_download</i></span>
+                </li>
+                <li class="collection-item">
+                  <span class="material-icons no-icon circle">#9</span>
+                  <span class="title">El proceso de valoración documental a la luz de los actuales debates archivísticos</span>
+                  <span class="downloads-total-value">1.313<i class="small material-icons">file_download</i></span>
+                </li>
+                <li class="collection-item">
+                  <span class="material-icons no-icon circle">#10</span>
+                  <span class="title">A biblioteca escolar a partir da perspectiva sociofenomenológica</span>
+                  <span class="downloads-total-value">1.114<i class="small material-icons">file_download</i></span>
+                </li>
+
+              </ul>
+            </div>
+            <div class="modal-footer">
+              <a href="#!" class="modal-close waves-effect waves-green btn-flat">Cerrar</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col s12 m4">
+        <!-- Modal Trigger -->
+        <a class="waves-effect waves-light btn modal-trigger custom-orange" href="#dataDownloadsByCountry">Datos de descarga por país</a>
+
+        <!-- Modal Structure -->
+        <div id="dataDownloadsByCountry" class="modal bottom-sheet">
+          <div class="container">
+            <div class="modal-content">
+              <div class="right-align">
+                <a href="#!" class="modal-close waves-effect waves-green btn-flat right-align">Cerrar</a>
+              </div>
+              <h4>Datos de descargas por país</h4>
+              <h6 class="right-align">Total descargas: 29.266</h6>
+              <div id="downloads-by-country-table"></div>
+              <h6 class="right-align">Total descargas: 29.266</h6>
+            </div>
+            <div class="modal-footer">
+              <a href="#!" class="modal-close waves-effect waves-green btn-flat">Cerrar</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col s12 m4">
+        <!-- Modal Trigger -->
+        <a class="waves-effect waves-light btn modal-trigger custom-dark-blue" href="#dataDownloadsByCity">Datos de descarga por ciudad</a>
+
+        <!-- Modal Structure -->
+        <div id="dataDownloadsByCity" class="modal bottom-sheet">
+          <div class="container">
+            <div class="modal-content">
+              <div class="right-align">
+                <a href="#!" class="modal-close waves-effect waves-green btn-flat right-align">Cerrar</a>
+              </div>
+              <h4>Datos de descargas por ciudad</h4>
+              <h6 class="right-align">Total descargas: 29.266</h6>
+              <div id="downloads-by-city-table"></div>
+              <h6 class="right-align">Total descargas: 29.266</h6>
+            </div>
+            <div class="modal-footer">
+              <a href="#!" class="modal-close waves-effect waves-green btn-flat">Cerrar</a>
+            </div>
           </div>
         </div>
       </div>
